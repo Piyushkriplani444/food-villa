@@ -49,13 +49,7 @@ const Body = ()=> {
     return (
         <div className="resturant-list">
             <ResturantCard />
-            <ResturantCard />
-            <ResturantCard />
-            <ResturantCard />
-            <ResturantCard />
-            <ResturantCard />
-            <ResturantCard />
-            <ResturantCard />
+            
 
         </div>
     )
