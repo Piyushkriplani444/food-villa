@@ -1,13 +1,16 @@
+import { useState } from "react";
 const Title = ()=> (
     <a href="/">
     <img 
         className="logo"
         alt="logo"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0F1XnPmfydXs9wLS7A9QivstRtxs_PcYbdVRTeBzbw&s"/>
+        src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"  />
     </a>
 );
 
 const Header = () =>{
+    const [isLoggedIn,setIsLoggedIn] = useState(false);
+    // const isLoggedIn = true
     return (
         <div className="header">
             <Title />
@@ -19,6 +22,12 @@ const Header = () =>{
                     <li>Cart</li>
                 </ul>
             </div> 
+            {isLoggedIn ?(
+                 <button onClick={()=> setIsLoggedIn(false)}>Logout</button>
+            ): (
+                 <button onClick={()=> setIsLoggedIn(true)}>Login</button>
+            )}
+           
         </div>
     );
 }
