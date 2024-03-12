@@ -1,12 +1,10 @@
-import ResturantCard from "./ResturantCard";
+import RestaurantCard from "./ResturantCard";
 import { RestrautList } from "../constants";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-
-const filteringData = (searchText,resturants)=>{
-    const filterData =  resturants.filter((resturant)=> resturant?.data?.name.toLowerCase()?.includes(searchText.toLowerCase()));
-    return filterData;
-}
+import { filterData } from "../utils/helper";
+import { Link } from "react-router-dom";
+// import useOnline from "../utils/useOnline";
 
 const Body = ()=> {
 
@@ -36,32 +34,43 @@ const Body = ()=> {
     //  if (filteredRestaurants?.length === 0)
     // return <h1>No Restraunt match your Filter!!</h1>;
 
+//     const isOnline = useOnline();
+//   if (!isOnline) {
+//     return <h1>🔴 Offline, please check your internet connection!!</h1>;
+//   }
     return allRestaurants?.length === 0 ? (
         <Shimmer />
       ) : (
         <>
-        <div className="search-constainer">
+        <div className="search-container">
             <input 
              type="text"
              className="search-input" 
              placeholder="Search" 
              value={searchText} 
-             onChange={(e)=> {
+             onChange={(e) => {
                 setSearchText(e.target.value)
             }}
              />
-            <button className="search-button" 
-            onClick={()=> {
-                const data  = filteringData(searchText,allRestaurants);
+            <button 
+            className="search-button" 
+            onClick={() => {
+                const data  = filterData(searchText,allRestaurants);
                 setFilteredRestaurants(data);
-            }}>Search</button>
-
-
+            }}>
+                Search
+            </button>
         </div>
-        <div className="resturant-list">
-           {filteredRestaurants.length ? filteredRestaurants?.map((resturant)=>{
-            return <ResturantCard {...resturant.data} key={resturant.data.id} />
-           }) : <h4>No Restraunt Found</h4> }  
+        <div className="restaurant-list">
+           {filteredRestaurants?.map((restaurant)=>{
+            return (
+            <Link
+              to={"/restaurant/" + restaurant.data.id}
+              key={restaurant.data.id}
+            >
+              <RestaurantCard {...restaurant.data} />
+            </Link> );   
+            })}  
         </div>
         </>
         

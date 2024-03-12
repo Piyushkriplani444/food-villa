@@ -29,7 +29,7 @@
     
 }
 
-.resturant-list {
+.restaurant-list {
     display: flex;
     flex-wrap: wrap;
 }
