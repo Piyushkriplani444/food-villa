@@ -1,7 +1,8 @@
-import { Outlet } from "react-router-dom";
-import ProfileFunctionalComponet from "./Profile";
-import Profile from "./ProfileClass";
-import { Component } from "react";
+import { Outlet } from 'react-router-dom';
+import ProfileFunctionalComponet from './Profile';
+import UserContext from '../utils/UserContext.js';
+import Profile from './ProfileClass';
+import { Component } from 'react';
 
 class About extends Component {
   constructor(props) {
@@ -17,12 +18,17 @@ class About extends Component {
     //console.log("Parent - render");
     return (
       <div>
-        <h1>About Us Page</h1>
+        <h1 className="font-bold p-10 text-xl">About Us Page</h1>
 
+        <UserContext.Consumer>
+          {({ user }) => (
+            <h4 className="font-bold text-xl p-10">
+              {user.name}- {user.email}{' '}
+            </h4>
+          )}
+        </UserContext.Consumer>
 
-        <p>
-          This is Food Ordering App 
-        </p>
+        <p>This is Food Ordering App</p>
         <Profile />
       </div>
     );
