@@ -28,13 +28,13 @@ const RestaurantMenu = () => {
     <Shimmer />
   ) : (
     <div className="menu">
-      <div className=" shadow-lg bg-[#BBC3A4] flex flex-wrap">
+      <div className=" shadow-lg bg-[#BBC3A4] flex flex-wrap justify-around">
         <img
-          className="p-2 m-2 w-40"
+          className="p-4 m-4 w-50"
           src={IMG_CDN_URL + restaurant?.cloudinaryImageId}
           alt={restaurant?.name}
         />
-        <div className="restaurant-summary-details">
+        <div className="p-30 m-20">
           <h2 className="font-bold text-xl">{restaurant?.name}</h2>
           <p className="restaurant-tags">{restaurant?.cuisines?.join(', ')}</p>
           <div className="border-black">

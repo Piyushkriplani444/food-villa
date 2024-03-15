@@ -40,7 +40,9 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <h4 className="px-2">{isOnline ? '✅' : '🔴'}</h4>
+      <h4 className="p-10 font-bold ">
+        {isOnline ? `✅ Online` : `🔴 Offline`}
+      </h4>
       <span className="p-10 font-bold text-red-900">{user.name}</span>
       {isLoggedIn ? (
         <button className="px-6" onClick={() => setIsLoggedIn(false)}>
