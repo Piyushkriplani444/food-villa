@@ -61,9 +61,8 @@ const RestaurantMenu = () => {
 
       <div className="">
         <div className="menu-items-container">
-          <div className="flex flex-wrap  p-5 mx-5">
+          <div className="p-5 mx-5">
             <h3 className="text-xl m-2 font-bold">Recommended</h3>
-            <p className="text-xl m-2 font-bold">{menuItems.length} ITEMS</p>
           </div>
           <div className="flex flex-wrap m-2 p-2 border-black">
             {menuItems.map(
