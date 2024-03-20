@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -6,8 +6,8 @@ class Profile extends React.Component {
     // Create State
     this.state = {
       userInfo: {
-        name: 'Dummy Name',
-        location: 'Dummy Location',
+        name: "Dummy Name",
+        location: "Dummy Location",
       },
     };
     //console.log("Child - Constructor" + this.props.name);
@@ -15,7 +15,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.timer = setInterval(() => {
-      console.log('Food ordering OP ');
+      console.log("Food ordering OP ");
     }, 1000);
 
     //console.log("Child - componentDidMount");
@@ -28,7 +28,7 @@ class Profile extends React.Component {
     if (this.state.count2 !== prevState.count2) {
       // code
     }
-    console.log('Component Did Update');
+    console.log("Component Did Update");
   }
   componentWillUnmount() {
     clearInterval(this.timer);

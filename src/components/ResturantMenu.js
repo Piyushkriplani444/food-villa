@@ -1,15 +1,15 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import {
   swiggy_menu_api_URL,
   IMG_CDN_URL,
   ITEM_IMG_CDN_URL,
   MENU_ITEM_TYPE_KEY,
   RESTAURANT_TYPE_KEY,
-} from '../constants';
-import Shimmer from './Shimmer';
-import useResMenuData from '../utils/useRestaurant';
-import { addItem } from '../utils/cartSlice';
-import { useDispatch } from 'react-redux';
+} from "../constants";
+import Shimmer from "./Shimmer";
+import useResMenuData from "../utils/useRestaurant";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -36,16 +36,16 @@ const RestaurantMenu = () => {
         />
         <div className="p-30 m-20">
           <h2 className="font-bold text-xl">{restaurant?.name}</h2>
-          <p className="restaurant-tags">{restaurant?.cuisines?.join(', ')}</p>
+          <p className="restaurant-tags">{restaurant?.cuisines?.join(", ")}</p>
           <div className="border-black">
             <div
               className="restaurant-rating"
               style={
                 restaurant?.avgRating < 4
-                  ? { backgroundColor: 'var(--light-red)' }
-                  : restaurant?.avgRating === '--'
-                  ? { backgroundColor: 'white', color: 'black' }
-                  : { color: 'white' }
+                  ? { backgroundColor: "var(--light-red)" }
+                  : restaurant?.avgRating === "--"
+                  ? { backgroundColor: "white", color: "black" }
+                  : { color: "white" }
               }
             >
               <i className="fa-solid fa-star"></i>
@@ -78,11 +78,11 @@ const RestaurantMenu = () => {
                       </h3>
                       <p className="item-cost">
                         {item?.price > 0
-                          ? new Intl.NumberFormat('en-IN', {
-                              style: 'currency',
-                              currency: 'INR',
+                          ? new Intl.NumberFormat("en-IN", {
+                              style: "currency",
+                              currency: "INR",
                             }).format(item?.price / 100)
-                          : ' '}
+                          : " "}
                       </p>
                       <p className="">{item?.description}</p>
                     </div>

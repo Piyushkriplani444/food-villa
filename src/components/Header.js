@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react';
-import foodvilla from '../assets/img/foodvilla.png';
-import { Link } from 'react-router-dom';
-import useOnline from '../utils/useOnline';
-import UserContext from '../utils/UserContext';
-import { useSelector } from 'react-redux';
+import { useContext, useState } from "react";
+import foodvilla from "../assets/img/foodvilla.png";
+import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Title = () => (
   <a href="/">
@@ -17,7 +17,7 @@ const Header = () => {
   const { user } = useContext(UserContext);
   const cartItem = useSelector((store) => store.cart.items);
   console.log(cartItem);
-  console.log('user', user);
+  console.log("user", user);
   return (
     <div className="flex justify-between bg-[#D7E4C0] shadow-lg 0">
       <Title />

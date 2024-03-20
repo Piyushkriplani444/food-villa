@@ -1,15 +1,15 @@
-import RestaurantCard from './ResturantCard';
-import { RestrautList } from '../constants';
-import { useEffect, useState, useContext } from 'react';
-import Shimmer from './Shimmer';
-import { filterData } from '../utils/helper';
-import { swiggy_api_URL } from '../constants';
-import { Link } from 'react-router-dom';
-import UserContext from '../utils/UserContext';
+import RestaurantCard from "./ResturantCard";
+import { RestrautList } from "../constants";
+import { useEffect, useState, useContext } from "react";
+import Shimmer from "./Shimmer";
+import { filterData } from "../utils/helper";
+import { swiggy_api_URL } from "../constants";
+import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 // import useOnline from "../utils/useOnline";
 
 const Body = () => {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [allRestaurants, setAllResturant] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const { user, setUser } = useContext(UserContext);
@@ -70,7 +70,7 @@ const Body = () => {
         {filteredRestaurants?.map((restaurant) => {
           return (
             <Link
-              to={'/restaurant/' + restaurant.info.id}
+              to={"/restaurant/" + restaurant.info.id}
               key={restaurant.info.id}
             >
               <RestaurantCard {...restaurant.info} />

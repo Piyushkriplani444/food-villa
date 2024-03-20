@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const useResMenuData = (
   swiggy_menu_api_URL,
@@ -26,7 +26,7 @@ const useResMenuData = (
         const restaurantData =
           json?.data?.cards
             ?.map((x) => x.card)
-            ?.find((x) => x && x.card['@type'] === RESTAURANT_TYPE_KEY)?.card
+            ?.find((x) => x && x.card["@type"] === RESTAURANT_TYPE_KEY)?.card
             ?.info || null;
         setRestaurant(restaurantData);
 
@@ -37,7 +37,7 @@ const useResMenuData = (
             ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map(
               (x) => x.card?.card
             )
-            ?.filter((x) => x['@type'] == MENU_ITEM_TYPE_KEY)
+            ?.filter((x) => x["@type"] == MENU_ITEM_TYPE_KEY)
             ?.map((x) => x.itemCards)
             .flat()
             .map((x) => x.card?.info) || [];

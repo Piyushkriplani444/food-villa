@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 function Profile(props) {
   const [count, setCount] = useState(0);
@@ -6,7 +6,7 @@ function Profile(props) {
     let interval = null;
 
     interval = setInterval(() => {
-      console.log('console.log');
+      console.log("console.log");
     }, 1000);
     return () => {
       clearInterval(interval);
